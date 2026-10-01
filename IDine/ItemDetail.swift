@@ -10,6 +10,9 @@ import SwiftUI
 struct ItemDetail: View {
     let item: MenuItem
 
+    @EnvironmentObject var order: Order
+    @State private var showingAlert = false
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -25,15 +28,27 @@ struct ItemDetail: View {
                     .font(.largeTitle.bold())
 
                 Text(item.description)
-                    .font(.title3)
                     .foregroundStyle(.secondary)
 
                 Text(item.price, format: .currency(code: "USD"))
                     .font(.title2.bold())
+
+                Button {
+                    order.add(item: item)
+                    showingAlert = true
+                } label: {
+                    Label("Add to Order", systemImage: "cart.badge.plus")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.orange)
             }
             .padding()
         }
         .navigationTitle(item.name)
-        .navigationBarTitleDisplayMode(.inline)
+        .alert("Added to Order", isPresented: $showingAlert) {
+            Button("OK", role: .cancel) { }
+        }
     }
 }

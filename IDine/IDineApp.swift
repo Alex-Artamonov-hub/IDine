@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct IDineApp: App {
+struct iDineApp: App {
+    @StateObject private var order = Order()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(order)
         }
     }
 }
