@@ -11,25 +11,32 @@ struct ContentView: View {
     let menu: [MenuSection] = Bundle.main.decode("menu.json")
 
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(menu) { section in
-                    Section(section.name) {
-                        ForEach(section.items) { item in
-                            NavigationLink {
-                                ItemDetail(item: item)
-                            } label: {
-                                ItemRow(item: item)
+        TabView {
+            NavigationStack {
+                List {
+                    ForEach(menu) { section in
+                        Section(section.name) {
+                            ForEach(section.items) { item in
+                                NavigationLink {
+                                    ItemDetail(item: item)
+                                } label: {
+                                    ItemRow(item: item)
+                                }
                             }
                         }
                     }
                 }
+                .navigationTitle("iDine")
             }
-            .navigationTitle("iDine")
-        }
-    }
-}
+            .tabItem {
+                Label("Menu", systemImage: "list.bullet")
+            }
 
-#Preview {
-    ContentView()
+            OrderView()
+                .tabItem {
+                    Label("Order", systemImage: "cart")
+                }
+        }
+        .tint(.orange)
+    }
 }
