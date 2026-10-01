@@ -1,0 +1,69 @@
+[
+    {
+        "id": 1,
+        "name": "Starters",
+        "items": [
+            {
+                "id": 1,
+                "name": "Garlic Bread",
+                "description": "Toasted bread with garlic, butter, and herbs.",
+                "price": 6.50,
+                "restrictions": []
+            },
+            {
+                "id": 2,
+                "name": "Bruschetta",
+                "description": "Toasted bread with tomatoes, basil, and olive oil.",
+                "price": 8.00,
+                "restrictions": []
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Mains",
+        "items": [
+            {
+                "id": 3,
+                "name": "Classic Burger",
+                "description": "Beef burger with lettuce, tomato, onion, and house sauce.",
+                "price": 13.50,
+                "restrictions": []
+            },
+            {
+                "id": 4,
+                "name": "Chicken Pasta",
+                "description": "Creamy pasta with grilled chicken and parmesan.",
+                "price": 15.00,
+                "restrictions": []
+            },
+            {
+                "id": 5,
+                "name": "Margherita Pizza",
+                "description": "Tomato, mozzarella, basil, and olive oil.",
+                "price": 14.00,
+                "restrictions": []
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Desserts",
+        "items": [
+            {
+                "id": 6,
+                "name": "Chocolate Cake",
+                "description": "Rich chocolate cake with vanilla cream.",
+                "price": 7.50,
+                "restrictions": []
+            },
+            {
+                "id": 7,
+                "name": "Apple Pie",
+                "description": "Warm apple pie with cinnamon.",
+                "price": 6.75,
+                "restrictions": []
+            }
+        ]
+    }
+]
